@@ -1,0 +1,228 @@
+.bg-color{
+    background-color: rgb(23, 51, 23);
+    color: white;
+    height: 40px;
+    padding-top: 20px;
+    height: 70px;
+}
+.menu{
+    background-color: rgb(237 242 237);
+}
+.navbar-brand1{
+    font-size: 50px;
+    font-family: "Brush Script MT", cursive;
+    color: darkgreen;
+}
+.size{
+    font-size:40px;
+}
+.navbar-custom {
+    background-color: white;
+}
+.nav-link{
+    font-size: 20px;
+    font-weight:bold;
+}
+
+.bg-footer{
+    background-color: rgb(43, 65, 43);
+    color: white;
+}
+.fab{
+    font-size: 30px;
+}
+.color-footer{
+    color: rgb(176, 234, 252);
+}
+.tieude{
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight:bold;
+    color: rgb(80, 60, 60);
+}
+.col-sm-5{
+    background-color: rgb(47, 65, 17);
+    padding: 50px;
+    color: white;
+}
+.ksp {
+    border: 2px solid #786e70;
+    float: left;
+    margin: auto;
+    padding: 20px;
+    text-align:center;
+    font-size:18px;
+     background-color:white;
+  }
+.padding{
+        border: none;
+        padding:10px;
+        float: left;
+    }
+.ksp p{
+    border: 2px solid #5a9563;;
+    padding: 10px;
+    color: red;
+    font-size: 20px;
+        } 
+        
+       
+.themdon{
+    
+    padding:40px;
+}
+.colorbt{
+    padding:10px;
+    background-color:rgb(23, 51, 23);
+    color:white;
+}
+.table .thead{
+    border:none;
+    background-color:#305f3f;
+    color:white;
+  }
+
+  .checkbox .spchonmua{
+    width:30px;
+    height:20px;
+    padding:50px;
+}
+
+  .giohang{
+    background-color: rgb(23, 51, 23);
+    color:white;
+    height:40px;
+    font-weight:bold;
+  }
+
+  .title-dathang{
+    border:1px solid black;
+     background-color:rgb(23, 51, 23);
+   color:white;
+   
+ }
+ 
+
+  .thanhtoan{
+    border-top:4px solid;
+    border-top-style: dashed;
+    border-top-color: #42503e;
+    padding:30px;
+    background-color:white;
+  }
+  .dc-thanhtoan{
+    padding-bottom: 30px;
+    background-color:white;
+  }
+  .diachi-table{
+    width:800px;
+    
+  }  
+  
+.thanhtoan-sanpham{
+  background-color:white;
+}
+.body{
+  background-color:#f0f3f5;
+}
+.thongtin-thanhtoan{
+    text-align:right;
+  }
+
+  .diachi-them{
+    text-align:right;
+ }
+ .size-dc{
+  width:350px;
+}
+
+/* The Modal (background) */
+.md {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.6); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.md-content {
+width:40%;
+background-color: #fefefe;
+margin: auto;
+padding: 45px;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+.themdc{
+  background-color: rgb(23, 51, 23);
+  color:white;
+  width:100px;
+  float:right;
+}
+#dc{
+  color:#aeb1af;
+  font-style: italic;
+}
+
+.topbroder{
+  background-color:#FFFFFF;
+  border-top:2px solid;
+  border-top-style: dashed;
+}
+.donmua-sanpham{
+  background-color:white;
+  padding: 20px;
+}
+.dhthanhcong{
+  border:1px solid #f2f3f1;
+  text-align:center;
+  width:60%;
+  margin:auto;
+  padding:20px;
+  background-color:#f2f3f1;
+}
+.title{
+  color:#24b12d;
+  font-weight:bold;
+  font-size:35px;
+}
+.icon{
+  font-size:55px;
+  color:#538224
+}
+.nd1{
+  font-style:italic;
+  font-size:20px;
+  font-weight:300;
+}
+.nd2{
+  font-weight:500;
+  font-size:20px;
+}
+.ctdonhang{
+  border:1px solid #4aab3b;
+  width: 250px;
+  background-color:#4cab38;
+  color:white;
+  padding:5px;
+  
+}

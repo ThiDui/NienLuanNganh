@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body{
+                background-color: #406078;
+        }
+          table{
+            margin: 0 auto;
+            border-spacing: 10px;
+            padding: 30px;
+            border: 1px solid black;
+             width:530px;
+             height:300px;
+          }
+          h3{
+            font-size: 30px;
+            color:white;
+          }
+        #firstname {
+          border: 1px solid black;
+          width:300px;
+          height:30px;
+        }
+        #pass {
+          border: 1px solid black;
+          width:300px;
+          height:30px;
+        }
+        #sm {
+          border: 1px solid black;
+          width:200px;
+          height:30px;
+            color: white;
+            background-color:#479bc1;
+        }
+        td{
+          font-size: 20px;
+          color:Navy;
+        
+        }
+        #ct{
+            background-color:#479bc1;
+            margin: auto;
+            width:530px;
+            border: 1px solid black;
+        }
+        #contens{
+            border: none;
+        }
+        
+        </style>
+</head>
+<body>
+    <div id ="contens">
+        <div id ="ct"><center><h3> Đăng nhập vào tài khoản</h3></center></div>
+        <table align="center" bgcolor="white">
+        <form action="" method="POST" enctype="multipart/form-data" onsubmit="return test()">
+    
+                <tr>
+                <td><label for="firstname">Tên đăng nhập(*)</label></td>
+                <td><input type="text" name="firstname" id="firstname"><div id="tdn"></div></td>
+            </tr>
+            <tr>
+            <td><label for="pass">Mật khẩu(*)</label></td>
+            <td><input type="password" name="password" id="pass"><div id="mk"></div></td>
+            </tr>
+        <tr>
+        <td></td>
+            <td>
+            <input id="sm" type="submit" name="dn" value="Đăng nhập">
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2" >Bạn chưa có tài khoản?Đăng ký<a href="/webbanhang/nguoidung/code/dangki_tk.php">Tại đây</a><td></tr>
+    
+    
+    </form>
+    </table>
+    </div>
+
+    <script>
+        function test(){
+            var check=true;
+            if(document.getElementById("firstname").value==""){
+                document.getElementById("tdn").innerHTML="Bạn phải nhập username!";
+                document.getElementById("tdn").style.color="red";
+                check=false;
+            }
+            else{
+                document.getElementById("tdn").innerHTML="";
+                return true;
+            }
+             if(document.getElementById("pass").value==""){
+                            document.getElementById("mk").innerHTML="Bạn phải nhập mật khẩu!";
+                            document.getElementById("mk").style.color="red";
+                            check=false;
+                    }
+                    return false;
+                }
+        
+        </script>
+</body>
+</html>

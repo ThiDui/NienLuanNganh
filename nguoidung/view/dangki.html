@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    
+    <title>Sign up</title>
+
+
+    <style>
+        body{
+            background-color: #406078;
+        }
+            table{
+                margin: 0 auto;
+                border-spacing: 10px;
+                width:550px;
+                padding: 10px;
+                border: 1px solid black;
+                font-size: 18px;
+            }
+            .input {
+              border: 1px solid black;
+              width:300px;
+              height:30px;
+            }
+            .sm {
+              border: 1px solid black;
+              width:100px;
+              height:30px;
+                color: white;
+                background-color:#479bc1;
+            }
+            #ct{
+                background-color:#479bc1;
+                margin: auto;
+                width:550px;
+                border: 1px solid black;
+            }
+            #contens{
+                border: none;
+            }
+            h3{
+            font-size: 30px;
+            color:white;
+          }
+            .lb{
+                 width:60px;
+            }
+        </style>
+</head>
+
+<body>
+    <div id ="contens_dk">
+        <div id ="ct"><h3 style = "text-align: center;"> Đăng kí tài khoản mới</h3></div>
+    <!--input_xuly.php-->
+    <form action="" method="POST" enctype="multipart/form-data" onsubmit="return test()">
+            <table style = "text-align: center; background-color :white; ">
+                <tr>
+                    <td><label for="firstname" class="lb">Tên tài khoản  (*)</label></td>
+                    <td><input type="text" name="user" id="user"  class="input" onchange="isExisted(this.value)" onblur	="return t1()"><div id="tdn"></div></td>
+                </tr>
+                <tr>
+                    <td><label for="firstname" class="lb">Tên đăng kí (*)</label></td>
+                    <td><input type="text" name="firstname" id="firstname"  class="input" ></td>
+                </tr>
+                <tr>
+                    <td><label for="pass" class="lb">Mật khẩu (*)</label></td>
+                    <td><input type="password" name="password" id="pass"  class="input" onblur	="return t2()"><div id="mk"></div></td>
+                </tr>
+                <tr>
+                    <td><label for="pass-confirm" class="lb">Gõ lại mật khẩu (*)</label></td>
+                    <td><input type="password" name="password" id="pass-confirm" class="input" onblur	="return t3()"><div id="mkl"></div></td>
+                </tr>
+                <tr>
+                    <td><label for="congty" class="lb">Tên công ty</label></td>
+                    <td><input type="text" name="congty" class="input" id="congty" ></td>
+                </tr>
+                <tr>
+                    <td><label for="sdt" class="lb">Số điện thoại (*)</label></td>
+                    <td><input type="text" name="sdt" id="sdt" class="input" onblur	="return testsdt()" ><div id="dt"></div></td>
+                </tr>
+                <tr>
+                <td><label for="diachi" class="lb">Địa chỉ (*)</label></td>
+                <td><textarea name="diachi" rows ="6" cols = "45" id="dc" > </textarea><br></td>
+            </tr>
+                <tr>
+                    <td><label for="fax" class="lb">Số Fax</label></td>
+                    <td><input type="text" name="fax" id="fax" class="input" ></td>
+                </tr>
+    
+                <tr>
+                <td></td>
+                    <td>
+                    <input type="submit" value="Đăng kí" name="them" class="sm">
+                    <input type="reset" value="Nhập lại" class="sm"><br>
+                    </td>
+                </tr>
+            </table>
+    </form>
+    </div>
+
+    <script>
+        function isExisted(str) {
+            var xmlhttp = new XMLHttpRequest();
+            xmlhttp.onreadystatechange = function() {
+              if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("tdn").innerHTML = this.responseText;
+              }
+            }
+            xmlhttp.open("GET","Kh_dangki_xulyAJ.php?u="+str,true);
+            xmlhttp.send();
+          }
+        
+        
+        function t1(){
+            var ten = document.getElementById("user").value;
+            var tam=/^[A-Za-z][A-Za-z0-9]{6,15}$/;
+        
+            if(tam.test(ten)!=true){
+                document.getElementById("tdn").innerHTML="Bắt đầu là chữ cái, theo sau là chữ cái hoặc là số, từ 6-15 ký tự!";
+                document.getElementById("tdn").style.color="red";
+                return  false;
+            }else{
+                document.getElementById("tdn").innerHTML="";
+                return true;
+            }
+        }
+        
+        function t2(){
+            var mkdn = document.getElementById("pass").value;
+            var mktam = /^(?=.*\d)(?=.*[A-Za-z])(?!.*[!@#$%^&*()_+].{5,16$})/;
+        
+            if(mktam.test(mkdn)!=true){
+                document.getElementById("mk").innerHTML="MK phai co chu va so!";
+                document.getElementById("mk").style.color="red";
+                return  false;
+            }else{
+                document.getElementById("mk").innerHTML="";
+                return true;
+            }
+        
+        }
+        
+        function t3(){
+            var mkdn1 = document.getElementById("pass-confirm").value;
+            var mkdn = document.getElementById("pass").value;
+            if(mkdn!=mkdn1  && mkdn != "" && mkdn1 != ""){
+                document.getElementById("mkl").innerHTML="Mật khẩu không trùng!";
+                document.getElementById("mkl").style.color="red";
+                return  false;
+            }else{
+                document.getElementById("mkl").innerHTML="";
+                return true;
+            }
+        }
+        function testsdt(){
+            var sdt = document.getElementById("sdt").value;
+            var sdttam = /^[0-9]{10,10}$/;
+            if(sdttam.test(sdt)!=true){
+                document.getElementById("dt").innerHTML="phải nhập 10 số !";
+                document.getElementById("dt").style.color="red";
+                return  false;
+            }else{
+                document.getElementById("dt").innerHTML="";
+                return true;
+            }
+        
+        }
+        
+        
+            function test(){
+                var check=true;
+                if(document.getElementById("firstname").value==""){
+                    check=false;
+                }
+                 if(document.getElementById("pass").value==""){
+                                check=false;
+                        }
+                if(document.getElementById("user").value==""){
+                        check=false;
+                }        
+            if(document.getElementById("pass-confirm").value==""){
+                check=false;
+            }
+        
+            if(document.getElementById("sdt").value==""){
+                check=false;
+            }
+            if(document.getElementById("dc").value==""){
+                check=false;
+            }
+        
+        if(check==false){
+            alert("Bạn phải nhập đầy đủ các thông tin (*)");
+            return false;
+        }
+            }
+        </script>
+</body>
+</html>
